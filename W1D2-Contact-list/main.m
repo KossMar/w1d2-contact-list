@@ -10,14 +10,26 @@ int main(int argc, const char * argv[]) {
        
         BOOL programRun = YES;
         
-        While (programRun =YES);
-        {
         
-            
-            InputCollector *usernameInput = [[InputCollector alloc] init];
-            
-            NSString *usernameInput =  [InputCollector inputForPrompt];
         
+        while (programRun == YES) {
+        
+         InputCollector *inputColl = [[InputCollector alloc] init];
+            
+         NSString *menuPrompt = [inputColl inputForPrompt:@"What would you like to do next? \n - new \n - create contact list \n - quit" ];
+        
+            if ([menuPrompt isEqualToString:(@"quit")]) {
+                NSLog(@"Later, Homeslice");
+                programRun = NO;
+                continue;
+            }
+            else if ([menuPrompt isEqualToString:(@"new")]) {
+                NSString *contactPrompt = [inputColl inputForPrompt:@"Name or e-mail?"];
+                if ([contactPrompt isEqualToString:(@"name")]) {
+                    
+                }
+            }
         }
+    }
     return 0;
 }

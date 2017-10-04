@@ -4,4 +4,8 @@
 
 @implementation ContactList
 
+-(void)addContact:(Contact *)newContact {
+    
+}
+
 @end
